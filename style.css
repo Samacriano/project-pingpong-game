@@ -1,10 +1,6 @@
-canvas {
-    border: 2px solid white;
-}
-
 body {
     display: flex;
     justify-content: center;
     margin-top: 150px;
-    background-color: darkblue;
+    background-image: url('images/opt1.jpg');
 }
