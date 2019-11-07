@@ -1,5 +1,5 @@
-const impact = new Audio('sounds1/sound2.mp3');
-const impact2 = new Audio('sounds1/sound3.mp3');
+const impact = new Audio('sounds1/left.mp3');
+const impact2 = new Audio('sounds1/right.mp3');
 class Game {
     constructor(canvas) {
       this.canvas = canvas;

@@ -1,3 +1,4 @@
+
 class Paddles {
     constructor(game, x, y, side) {
         this.game = game;
@@ -11,6 +12,8 @@ class Paddles {
 
         this.side = side;
     }
+
+    
 
     newPosition() {
         this.x += this.speedX;
@@ -73,6 +76,8 @@ class Paddles {
                     break;
             }
         });
+
+        
     }
 
     controlRightPaddle() {
@@ -81,11 +86,11 @@ class Paddles {
 
             switch (event.keyCode) {
                 case 38:
-                    //console.log('up', this.speedY)
+                  
                     this.speedY = -7;
                     break;
                 case 40:
-                    //console.log('down', this.speedY)
+                    
                     this.speedY = 7;
                     break;
             }
@@ -96,17 +101,15 @@ class Paddles {
 
             switch (event.keyCode) {
                 case 38:
-                    //console.log('up', this.speedY)
+                    
                     this.speedY = 0;
                     break;
                 case 40:
-                    //console.log('down', this.speedY)
+                 
                     this.speedY = 0;
                     break;
             }
         });
-
-
 
     }
 
