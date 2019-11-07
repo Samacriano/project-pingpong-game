@@ -1,9 +1,12 @@
-class Sides {
+class Shadow{
     constructor(game, x, y) {
         this.game = game;
         this.x = x;
         this.y = y;
     }
+
+    //FUNCTION TO DRAW THE ENEMY SPACE SHIP IN THE CENTRE OF THE CANVAS
+    //ADDS SHADOW TO ALL OBJECTS ON THE SCREEN
 
     roundedRect(x, y, width, height, radius) {
 

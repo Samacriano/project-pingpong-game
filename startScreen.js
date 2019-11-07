@@ -1,6 +1,4 @@
 window.onload = function () {
-    const canvas = document.querySelector('canvas');
-    const game = new Game(canvas);
     const startScreen = new Image();
     startScreen.src = 'images/opt1.jpg';
     startScreen.addEventListener( 'load', () => {
@@ -8,7 +6,7 @@ window.onload = function () {
     });
     document.addEventListener('keydown', function(e) {
       if(e.which === 13){
-        game.inicializer();
+        game.gameOver();
       }
     });
  };

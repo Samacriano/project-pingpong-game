@@ -12,11 +12,12 @@ class Game {
     this.rightScore = new Scores(this, 'rightScore');
     this.leftScore = new Scores(this, 'leftScore');
     this.scoreBoard = [0, 0];
-    this.spaceShip = new Player(this);
-    this.sideBarTop = new Sides(this, 3, 3);
+    this.sideBarTop = new Shadow(this, 3, 3);
 
   }
 
+
+// fucntion for the collision between the paddles and the ball
   collision(b, p) {
 
     let ballTop = b.y - b.radius;
@@ -34,14 +35,14 @@ class Game {
         return true;
       } else {
         if (p.side === 'right') {
-          this.scoreBoard[1]++;
-          this.resetBall();
+          this.scoreBoard[1]++; //increment the score by 1
+          this.resetBall(); // reseting the game after scoring goal
 
         } else {
-          this.scoreBoard[0]++;
-          this.resetBall();
+          this.scoreBoard[0]++; // increment the cores by 1
+          this.resetBall(); // reset the ball to the middle of the canvas
         }
-        impact2.play();
+        impact2.play(); //play the soound
         return false;
       }
     } else {
@@ -50,6 +51,7 @@ class Game {
 
   }
 
+  //reseting the ball after scoring goal
   resetBall() {
     this.ball.x = canvas.width / 2;
     this.ball.y = canvas.height / 2;
@@ -65,6 +67,7 @@ class Game {
   }
 
 
+  // function to draw the backgrounf of the canvas
   drawBackground() {
     const context = this.context;
     const width = this.width;
@@ -86,20 +89,6 @@ class Game {
     const ball = this.ball;
     const leftPaddle = this.paddleLeft;
     const rightPaddle = this.paddleRight;
-
-    // let score = [];
-
-    //   if (this.ball.x - this.ball.radius < 0){
-    //     //the computer win 
-    //     this.score++;
-    //     this.resetBall();
-
-    // } else if (this.ball.x + this.ball.radius > canvas.width){
-    //     // the user wins
-    //     this.score++;
-    //     this.resetBall();
-    // }
-
 
 
     context.clearRect(0, 0, width, height);
@@ -143,7 +132,6 @@ class Game {
     this.ball.draw();
     this.rightScore.drawText();
     this.leftScore.drawText();
-    this.spaceShip.enemy();
     this.paddleLeft.sides();
     this.paddleRight.sides();
     this.paddleLeft.newPosition();

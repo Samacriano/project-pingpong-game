@@ -1,4 +1,3 @@
-
 class Paddles {
     constructor(game, x, y, side) {
         this.game = game;
@@ -13,8 +12,8 @@ class Paddles {
         this.side = side;
     }
 
-    
 
+    //FUNCTION TO SET NEW POSITION FOR THE PADDLES 
     newPosition() {
         this.x += this.speedX;
         this.y += this.speedY;
@@ -24,6 +23,7 @@ class Paddles {
         }
     }
 
+    //FUNCTION TO DESIGN THE 2 DIFFERENT PADS ON THE CANVAS
     sides() {
         //RIGHT SIDE IMAGE AND FUNCTIONALITY
         if (this.side === 'right') {
@@ -44,19 +44,17 @@ class Paddles {
         }
     }
 
-   
 
+    //FUCNTION TO CONTROL THE PADDLES MOVEMENT UP AND DOOWN ONLY
     controlLeftPaddle() {
         window.addEventListener('keydown', (e) => {
             e.preventDefault();
 
             switch (e.keyCode) {
                 case 87:
-                    //console.log('up', this.speedY)
                     this.speedY = -15;
                     break;
                 case 83:
-                    //console.log('down', this.speedY)
                     this.speedY = 15;
                     break;
             }
@@ -67,30 +65,26 @@ class Paddles {
 
             switch (e.keyCode) {
                 case 87:
-                    //console.log('up', this.speedY)
                     this.speedY = 0;
                     break;
                 case 83:
-                    //console.log('down', this.speedY)
                     this.speedY = 0;
                     break;
             }
         });
 
-        
+
     }
 
     controlRightPaddle() {
         window.addEventListener('keydown', (event) => {
             event.preventDefault();
-
             switch (event.keyCode) {
                 case 38:
-                  
                     this.speedY = -7;
                     break;
                 case 40:
-                    
+
                     this.speedY = 7;
                     break;
             }
@@ -98,14 +92,11 @@ class Paddles {
 
         window.addEventListener('keyup', (event) => {
             event.preventDefault();
-
             switch (event.keyCode) {
                 case 38:
-                    
                     this.speedY = 0;
                     break;
                 case 40:
-                 
                     this.speedY = 0;
                     break;
             }
@@ -114,4 +105,3 @@ class Paddles {
     }
 
 }
-
