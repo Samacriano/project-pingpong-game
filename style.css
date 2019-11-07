@@ -1,7 +1,10 @@
+
+
 body {
     display: flex;
     justify-content: center;
     margin-top: 150px;
+    font-family: 'Nova Mono', monospace;
     /* background-image: url('images/opt1.jpg'); */
 }
 

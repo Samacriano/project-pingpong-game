@@ -13,8 +13,7 @@ class Game {
     this.leftScore = new Scores(this, 'leftScore');
     this.scoreBoard = [0, 0];
     this.elementShadows = new Shadow(this, 3, 3);
-  
-
+    this.mouseHandler();
   }
 
 
@@ -84,6 +83,17 @@ class Game {
   }
 
 
+  // adding mouse controls to the mouse for the user.
+  mouseHandler() {
+    window.addEventListener('mousemove', (event) => {
+        event.preventDefault();
+        let rect = canvas.getBoundingClientRect();
+
+        this.paddleRight.y = event.clientY - rect.top - this.paddleRight.height/2;
+    });
+}
+
+
   update() {
     const context = this.context;
     const width = this.width;
@@ -126,7 +136,8 @@ class Game {
 
       if (this.scoreBoard[0] === 5 || this.scoreBoard[1] === 5) {
         alert('GAME OVER!');
-        this.resetBall();
+        window.location.reload();
+        clearInterval(interval); //
 
       }
       //where the ball hit the player

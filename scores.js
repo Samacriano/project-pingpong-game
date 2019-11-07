@@ -16,7 +16,7 @@ class Scores {
 
             
             context.fillStyle = 'rgb(245, 66, 126)';
-            context.font = '26px sans-serif';
+            context.font = '26px monospace';
             context.fillText(`${this.game.scoreBoard[1]}`, width / 4, height / 5);
           
         }
@@ -25,7 +25,7 @@ class Scores {
 
          
             context.fillStyle = 'rgb(245, 66, 126)';
-            context.font = '26px sans-serif';
+            context.font = '26px monospace';
             context.fillText(`${this.game.scoreBoard[0]}`, 3 * width / 4, height / 5);
         }
 
