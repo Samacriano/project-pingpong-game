@@ -104,8 +104,16 @@ class Game {
 
 
     // COLISION DETECTION
-
     let player = (ball.x < width / 2) ? leftPaddle : rightPaddle;
+
+    // simple computer control commands
+    let computerLevel = 0.1
+    leftPaddle.y += (ball.y - (leftPaddle.y + leftPaddle.height/2)) * computerLevel;
+
+    if(ball.y + ball.radius > canvas.height || ball.y - ball.radius < 0) {
+        ball.velocityY = -ball.velocityY;
+    }
+
 
     if (this.collision(ball, player)) { // COLIDIU
 

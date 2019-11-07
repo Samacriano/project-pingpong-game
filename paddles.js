@@ -40,41 +40,42 @@ class Paddles {
             const leftStick = new Image();
             leftStick.src = 'images/left-stick.png';
             context.drawImage(leftStick, this.x, this.y, 20, 100);
-            this.controlLeftPaddle();
+            //this.controlLeftPaddle();
         }
     }
 
 
+
     //FUCNTION TO CONTROL THE PADDLES MOVEMENT UP AND DOOWN ONLY
-    controlLeftPaddle() {
-        window.addEventListener('keydown', (e) => {
-            e.preventDefault();
+    // controlLeftPaddle() {
+    //     window.addEventListener('keydown', (e) => {
+    //         e.preventDefault();
 
-            switch (e.keyCode) {
-                case 87:
-                    this.speedY = -15;
-                    break;
-                case 83:
-                    this.speedY = 15;
-                    break;
-            }
-        });
+    //         switch (e.keyCode) {
+    //             case 87:
+    //                 this.speedY = -15;
+    //                 break;
+    //             case 83:
+    //                 this.speedY = 15;
+    //                 break;
+    //         }
+    //     });
 
-        window.addEventListener('keyup', (e) => {
-            e.preventDefault();
+    //     window.addEventListener('keyup', (e) => {
+    //         e.preventDefault();
 
-            switch (e.keyCode) {
-                case 87:
-                    this.speedY = 0;
-                    break;
-                case 83:
-                    this.speedY = 0;
-                    break;
-            }
-        });
+    //         switch (e.keyCode) {
+    //             case 87:
+    //                 this.speedY = 0;
+    //                 break;
+    //             case 83:
+    //                 this.speedY = 0;
+    //                 break;
+    //         }
+    //     });
 
 
-    }
+    // }
 
     controlRightPaddle() {
         window.addEventListener('keydown', (event) => {
