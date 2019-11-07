@@ -6,18 +6,19 @@ class Game {
     this.context = canvas.getContext('2d');
     this.width = canvas.width;
     this.height = canvas.height;
-    this.paddleLeft = new Paddles(this, 100, this.height / 2 - 100 / 2, 'left');
-    this.paddleRight = new Paddles(this, this.width - 100, this.height / 2 - 100 / 2, 'right');
+    this.paddleLeft = new Paddles(this, 0, this.height / 2 - 100 / 2, 'left');
+    this.paddleRight = new Paddles(this, this.width - 40, this.height / 2 - 100 / 2, 'right');
     this.ball = new Ball(this);
     this.rightScore = new Scores(this, 'rightScore');
     this.leftScore = new Scores(this, 'leftScore');
     this.scoreBoard = [0, 0];
-    this.sideBarTop = new Shadow(this, 3, 3);
+    this.elementShadows = new Shadow(this, 3, 3);
+  
 
   }
 
 
-// fucntion for the collision between the paddles and the ball
+  // fucntion for the collision between the paddles and the ball
   collision(b, p) {
 
     let ballTop = b.y - b.radius;
@@ -28,7 +29,7 @@ class Game {
     let paddleTop = p.y;
     let paddleBottom = p.y + p.height;
 
-    if (ballLeft < 120 || ballRight > 700) {
+    if (ballLeft < 21 || ballRight > 759) {
 
       if (!(ballBottom < paddleTop || ballTop > paddleBottom)) {
         impact2.play();
@@ -60,8 +61,8 @@ class Game {
     this.ball.velocityY = 0;
     this.ball.speed = 1;
 
-    this.paddleLeft = new Paddles(this, 100, this.height / 2 - 100 / 2, 'left');
-    this.paddleRight = new Paddles(this, this.width - 100, this.height / 2 - 100 / 2, 'right');
+    this.paddleLeft = new Paddles(this, 0, this.height / 2 - 100 / 2, 'left');
+    this.paddleRight = new Paddles(this, this.width - 40, this.height / 2 - 100 / 2, 'right');
 
     //this.ball.velocityX = -this.ball.velocityX;
   }
@@ -77,6 +78,7 @@ class Game {
     context.fillRect(0, 0, width, height);
   }
 
+  //inicializer for the initial screen picture
   inicializer() {
     this.loop();
   }
@@ -108,13 +110,17 @@ class Game {
 
     // simple computer control commands
     let computerLevel = 0.1
-    leftPaddle.y += (ball.y - (leftPaddle.y + leftPaddle.height/2)) * computerLevel;
+    leftPaddle.y += (ball.y - (leftPaddle.y + leftPaddle.height / 2)) * computerLevel;
 
-    if(ball.y + ball.radius > canvas.height || ball.y - ball.radius < 0) {
-        ball.velocityY = -ball.velocityY;
+    //setting up the mouse to control the user paddle
+  
+
+    //setting  the top and bottom wall boundaries 
+    if (ball.y + ball.radius > canvas.height || ball.y - ball.radius < 0) {
+      ball.velocityY = -ball.velocityY;
     }
 
-
+    //declaring the colision function between the ball and the paddle
     if (this.collision(ball, player)) { // COLIDIU
 
 
@@ -144,7 +150,7 @@ class Game {
     this.paddleRight.sides();
     this.paddleLeft.newPosition();
     this.paddleRight.newPosition();
-    this.sideBarTop.roundedRect(this.width / 2, this.height / 2, 25, 25, 15);
+    this.elementShadows.roundedRect();
 
     window.requestAnimationFrame(timestamp => this.loop(timestamp));
 
