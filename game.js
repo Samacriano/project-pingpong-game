@@ -83,15 +83,7 @@ class Game {
   }
 
 
-  // adding mouse controls to the mouse for the user.
-  mouseHandler() {
-    window.addEventListener('mousemove', (event) => {
-        event.preventDefault();
-        let rect = canvas.getBoundingClientRect();
 
-        this.paddleRight.y = event.clientY - rect.top - this.paddleRight.height/2;
-    });
-}
 
 
   update() {
@@ -115,11 +107,11 @@ class Game {
     }
 
 
-    // COLISION DETECTION
+    //changing the names of the paddles.
     let player = (ball.x < width / 2) ? leftPaddle : rightPaddle;
 
     // simple computer control commands
-    let computerLevel = 0.1
+    let computerLevel = 0.1;
     leftPaddle.y += (ball.y - (leftPaddle.y + leftPaddle.height / 2)) * computerLevel;
 
     //setting up the mouse to control the user paddle
@@ -165,6 +157,16 @@ class Game {
 
     window.requestAnimationFrame(timestamp => this.loop(timestamp));
 
+  }
+
+    // adding mouse controls to the mouse for the user.
+    mouseHandler() {
+      window.addEventListener('mousemove', (event) => {
+          event.preventDefault();
+          let rect = canvas.getBoundingClientRect();
+  
+          this.paddleRight.y = event.clientY - rect.top - this.paddleRight.height/2;
+      });
   }
 
 

@@ -31,7 +31,6 @@ class Paddles {
             const rightStick = new Image();
             rightStick.src = 'images/right-stick.png';
             context.drawImage(rightStick, this.x, this.y, 20, 100);
-            this.controlRightPaddle();
         }
 
         //LEFT SIDE IMAGE AND FUNCTIONALITY
@@ -40,69 +39,7 @@ class Paddles {
             const leftStick = new Image();
             leftStick.src = 'images/left-stick.png';
             context.drawImage(leftStick, this.x, this.y, 20, 100);
-            //this.controlLeftPaddle();
         }
-    }
-
-
-
-    //FUCNTION TO CONTROL THE PADDLES MOVEMENT UP AND DOOWN ONLY
-    // controlLeftPaddle() {
-    //     window.addEventListener('keydown', (e) => {
-    //         e.preventDefault();
-
-    //         switch (e.keyCode) {
-    //             case 87:
-    //                 this.speedY = -15;
-    //                 break;
-    //             case 83:
-    //                 this.speedY = 15;
-    //                 break;
-    //         }
-    //     });
-
-    //     window.addEventListener('keyup', (e) => {
-    //         e.preventDefault();
-
-    //         switch (e.keyCode) {
-    //             case 87:
-    //                 this.speedY = 0;
-    //                 break;
-    //             case 83:
-    //                 this.speedY = 0;
-    //                 break;
-    //         }
-    //     });
-
-
-    // }
-
-    controlRightPaddle() {
-        window.addEventListener('keydown', (event) => {
-            event.preventDefault();
-            switch (event.keyCode) {
-                case 38:
-                    this.speedY = -7;
-                    break;
-                case 40:
-
-                    this.speedY = 7;
-                    break;
-            }
-        });
-
-        window.addEventListener('keyup', (event) => {
-            event.preventDefault();
-            switch (event.keyCode) {
-                case 38:
-                    this.speedY = 0;
-                    break;
-                case 40:
-                    this.speedY = 0;
-                    break;
-            }
-        });
-
     }
 
 }
