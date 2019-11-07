@@ -1,3 +1,5 @@
+const impact = new Audio('sounds1/sound2.mp3');
+const impact2 = new Audio('sounds1/sound3.mp3');
 class Game {
     constructor(canvas) {
       this.canvas = canvas;
@@ -11,7 +13,7 @@ class Game {
       this.leftScore = new Scores(this, 'leftScore');
       this.scoreBoard = [0, 0];
       this.spaceShip = new Player(this);
-      
+      this.sideBarTop = new Sides(this, 3, 3);
   
     }
   
@@ -28,15 +30,18 @@ class Game {
       if (ballLeft < 120 || ballRight > 700) {
   
         if (!(ballBottom < paddleTop || ballTop > paddleBottom)) {
+          impact2.play();
           return true;
         } else {
           if (p.side === 'right') {
             this.scoreBoard[1]++;
             this.resetBall();
+
           } else {
             this.scoreBoard[0]++;
             this.resetBall();
           }
+          impact2.play();
           return false;
         }
       } else {
@@ -138,6 +143,7 @@ class Game {
       this.paddleRight.sides();
       this.paddleLeft.newPosition();
       this.paddleRight.newPosition();
+      this.sideBarTop.roundedRect( this.width/2, this.height/2, 25, 25, 15);
       //this.incrementScore();
   
   

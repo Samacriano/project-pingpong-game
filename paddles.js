@@ -58,6 +58,21 @@ class Paddles {
                     break;
             }
         });
+
+        window.addEventListener('keyup', (e) => {
+            e.preventDefault();
+
+            switch (e.keyCode) {
+                case 87:
+                    //console.log('up', this.speedY)
+                    this.speedY = 0;
+                    break;
+                case 83:
+                    //console.log('down', this.speedY)
+                    this.speedY = 0;
+                    break;
+            }
+        });
     }
 
     controlRightPaddle() {
@@ -72,6 +87,21 @@ class Paddles {
                 case 40:
                     //console.log('down', this.speedY)
                     this.speedY = 7;
+                    break;
+            }
+        });
+
+        window.addEventListener('keyup', (event) => {
+            event.preventDefault();
+
+            switch (event.keyCode) {
+                case 38:
+                    //console.log('up', this.speedY)
+                    this.speedY = 0;
+                    break;
+                case 40:
+                    //console.log('down', this.speedY)
+                    this.speedY = 0;
                     break;
             }
         });

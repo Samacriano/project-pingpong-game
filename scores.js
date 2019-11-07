@@ -15,8 +15,8 @@ class Scores {
         if (this.position === 'rightScore') {
 
             
-            context.fillStyle = 'lightblue';
-            context.font = '22px Lato';
+            context.fillStyle = 'rgb(245, 66, 126)';
+            context.font = '26px Lato';
             context.fillText(`${this.game.scoreBoard[1]}`, width / 4, height / 5);
           
         }
@@ -24,8 +24,8 @@ class Scores {
         if (this.position === 'leftScore') {
 
          
-            context.fillStyle = 'lightblue';
-            context.font = '22px Lato';
+            context.fillStyle = 'rgb(245, 66, 126)';
+            context.font = '26px Lato';
             context.fillText(`${this.game.scoreBoard[0]}`, 3 * width / 4, height / 5);
         }
 
