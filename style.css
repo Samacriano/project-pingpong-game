@@ -2,5 +2,19 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 150px;
-    background-image: url('images/opt1.jpg');
+    /* background-image: url('images/opt1.jpg'); */
 }
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  canvas{
+      position: absolute;
+      /* border-top: 3px solid white;
+      border-bottom: 3px solid white; */
+  }

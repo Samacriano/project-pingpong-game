@@ -4,13 +4,14 @@ class Game {
       this.context = canvas.getContext('2d');
       this.width = canvas.width;
       this.height = canvas.height;
-      this.paddleLeft = new Paddles(this, 0, this.height / 2 - 100 / 2, 'left');
-      this.paddleRight = new Paddles(this, this.width - 20, this.height / 2 - 100 / 2, 'right');
+      this.paddleLeft = new Paddles(this, 100, this.height / 2 - 100 / 2, 'left');
+      this.paddleRight = new Paddles(this, this.width - 100, this.height / 2 - 100 / 2, 'right');
       this.ball = new Ball(this);
       this.rightScore = new Scores(this, 'rightScore');
       this.leftScore = new Scores(this, 'leftScore');
       this.scoreBoard = [0, 0];
-      this.loop();
+      this.spaceShip = new Player(this);
+      
   
     }
   
@@ -24,7 +25,7 @@ class Game {
       let paddleTop = p.y;
       let paddleBottom = p.y + p.height;
   
-      if (ballLeft < 21 || ballRight > 779) {
+      if (ballLeft < 120 || ballRight > 700) {
   
         if (!(ballBottom < paddleTop || ballTop > paddleBottom)) {
           return true;
@@ -51,6 +52,9 @@ class Game {
       this.ball.velocityX = 5;
       this.ball.velocityY = 0;
       this.ball.speed = 1;
+
+      this.paddleLeft = new Paddles(this, 100, this.height / 2 - 100 / 2, 'left');
+      this.paddleRight = new Paddles(this, this.width - 100, this.height / 2 - 100 / 2, 'right'); 
   
       //this.ball.velocityX = -this.ball.velocityX;
     }
@@ -61,8 +65,12 @@ class Game {
       const width = this.width;
       const height = this.height;
   
-      context.fillStyle = 'rgba(4, 86, 160, 0.5)'; // transparent
+      context.fillStyle = 'rgba(128, 120, 121, 0.2)';
       context.fillRect(0, 0, width, height);
+    }
+
+    inicializer(){
+      this.loop();
     }
   
   
@@ -125,6 +133,7 @@ class Game {
       this.ball.draw();
       this.rightScore.drawText();
       this.leftScore.drawText();
+      this.spaceShip.enemy();
       this.paddleLeft.sides();
       this.paddleRight.sides();
       this.paddleLeft.newPosition();
@@ -135,6 +144,8 @@ class Game {
       window.requestAnimationFrame(timestamp => this.loop(timestamp));
   
     }
+
+
   
   
   

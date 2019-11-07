@@ -17,7 +17,8 @@ class Scores {
             
             context.fillStyle = 'lightblue';
             context.font = '22px Lato';
-            context.fillText(`Score: ${this.game.scoreBoard[1]}`, width / 4, height / 5);
+            context.fillText(`${this.game.scoreBoard[1]}`, width / 4, height / 5);
+          
         }
 
         if (this.position === 'leftScore') {
@@ -25,7 +26,9 @@ class Scores {
          
             context.fillStyle = 'lightblue';
             context.font = '22px Lato';
-            context.fillText(`Score: ${this.game.scoreBoard[0]}`, 3 * width / 4, height / 5);
+            context.fillText(`${this.game.scoreBoard[0]}`, 3 * width / 4, height / 5);
         }
+
     }
+    
 }

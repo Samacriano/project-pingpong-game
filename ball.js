@@ -11,7 +11,7 @@
     this.speed = 3;
 
     this.radius = 10;
-    this.color = 'grey';
+    this.color = 'pink';
   }
 
   draw() {

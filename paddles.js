@@ -41,6 +41,8 @@ class Paddles {
         }
     }
 
+   
+
     controlLeftPaddle() {
         window.addEventListener('keydown', (e) => {
             e.preventDefault();
