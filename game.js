@@ -111,7 +111,7 @@ class Game {
     let player = (ball.x < width / 2) ? leftPaddle : rightPaddle;
 
     // simple computer control commands
-    let computerLevel = 0.1;
+    let computerLevel = 0.05;
     leftPaddle.y += (ball.y - (leftPaddle.y + leftPaddle.height / 2)) * computerLevel;
 
     //setting up the mouse to control the user paddle

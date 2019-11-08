@@ -6,7 +6,7 @@ const game = new Game(canvas);
 // inicial screen picture // missing the text // text to be adde // Press ENTER
 window.onload = function () {
     const startScreen = new Image();
-    startScreen.src = 'images/opt1.jpg';
+    startScreen.src = 'images/sama.png';
     startScreen.addEventListener('load', () => {
         game.context.drawImage(startScreen, 0, 0, 800, 400);
     });
