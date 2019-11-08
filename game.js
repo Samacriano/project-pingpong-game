@@ -127,13 +127,17 @@ class Game {
     if (this.collision(ball, player)) { // COLIDIU
 
 
+      //DISPLAYS IF USER WINS
       if (this.scoreBoard[0] === 3 || this.scoreBoard[1] === 3) {
         victoryLaught.play();
         alert('GAME OVER!');
         window.location.reload();
-        clearInterval(interval); //
+        clearInterval(interval); 
 
       }
+
+
+
       //where the ball hit the player
       this.ball.velocityX *= -1.1;
 
