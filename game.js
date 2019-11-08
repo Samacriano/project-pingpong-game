@@ -1,5 +1,6 @@
 const impact = new Audio('sounds1/left.mp3');
 const impact2 = new Audio('sounds1/right.mp3');
+const victoryLaught = new Audio('sounds1/laughtingGame.mp3');
 class Game {
   constructor(canvas) {
     this.canvas = canvas;
@@ -126,7 +127,8 @@ class Game {
     if (this.collision(ball, player)) { // COLIDIU
 
 
-      if (this.scoreBoard[0] === 5 || this.scoreBoard[1] === 5) {
+      if (this.scoreBoard[0] === 3 || this.scoreBoard[1] === 3) {
+        victoryLaught.play();
         alert('GAME OVER!');
         window.location.reload();
         clearInterval(interval); //

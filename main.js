@@ -1,3 +1,4 @@
+const alienSpeaking = new Audio('sounds1/alienVoice.mp3');
 const canvas = document.querySelector('canvas');
 
 const game = new Game(canvas);
@@ -12,6 +13,7 @@ window.onload = function () {
     });
     document.addEventListener('keydown', function (e) {
         if (e.which === 13) {
+            alienSpeaking.play();
             game.inicializer();
         }
     });
