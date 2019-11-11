@@ -112,7 +112,7 @@ class Game {
     let player = (ball.x < width / 2) ? leftPaddle : rightPaddle;
 
     // simple computer control commands
-    let computerLevel = 0.1;
+    let computerLevel = 0.05;
     leftPaddle.y += (ball.y - (leftPaddle.y + leftPaddle.height / 2)) * computerLevel;
 
     //setting up the mouse to control the user paddle
@@ -128,7 +128,7 @@ class Game {
 
 
       //DISPLAYS IF USER WINS
-      if (this.scoreBoard[0] === 10 || this.scoreBoard[1] === 10) {
+      if (this.scoreBoard[0] === 5 || this.scoreBoard[1] === 5) {
         victoryLaught.play();
         alert('GAME OVER!');
         window.location.reload();
